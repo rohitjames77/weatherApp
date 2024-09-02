@@ -20,12 +20,20 @@ module.exports = {
     compress: true,
     historyApiFallback: true,
   },
-  plugins: [new HtmlWebpackPlugin()],
+  plugins: [new HtmlWebpackPlugin({
+    template: './src/index.html', // Path to your source HTML file
+    filename: 'index.html' // The filename of the generated HTML file in /dist
+  })],
+
   module: {
     rules: [
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
