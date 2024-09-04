@@ -9,8 +9,9 @@
     <header class="info_bar"></header>
     <div class="weather_form_container">
     <h1 class="weatherApp_title">Weather</h1>
-    <form action="" class="weatherApp_form">
-      <input type="text" class="weather_input" />
+    <form method="GET" class="weatherApp_form" >
+      <input type="text" class="weather_input" required/>
+      <h2 class="error_message"></h2>
       <label class="toggle">
         <input class="toggle-input" type="checkbox"/>
         <span class="toggle-label" data-off="Fahrenheit" 
@@ -19,12 +20,12 @@
         <span class="toggle-handle"></span>
       </label>
       <div class="date_container">
-        <input type="date" class="left_date">
-        <input type="date" class="right_date" >
+        <input type="date" class="left_date" value="2024-01-01" required>
+        <input type="date" class="right_date" value="2024-01-01" required >
       </div>
-      <input type="submit" class="weatherApp_submit" value="Search" />
+      <button type="submit" class="weatherApp_submit">Search</button>
     </form>
   </div>
-    <img src="" alt="gif_bar" class="gif_bar">
+  <img src="" alt="gif_bar" class="gif_bar">
   </body>
 </html>

@@ -1,2 +1,3 @@
 import './style.css'
-import { changePlaceHolder,restoreRightDate } from './inputForm'
+import { checkValidation } from './Validation'
+import { startDateStore,endDateStore,inputVal,toggleValStore} from './inputStorage'

@@ -32,6 +32,14 @@ left: 15%;
   margin: 0;
   color:grey;
 }
+.error_message{
+  grid-area: 2/1/3/2;
+  font-family: "Ubuntu", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.75rem ;
+  color: red;
+}
   .weatherApp_form{
     position: absolute;
     top: 40%;
@@ -52,7 +60,7 @@ left: 15%;
 grid-column-start:1 ;
 grid-column-end: 3;
   }
-  
+   
   .weatherApp_submit{
      border: 2px solid grey;
     border-radius: 0 15px 15px 0;
@@ -166,7 +174,7 @@ margin-top: 2%;
 margin-left: 4.5%;
 
 border-radius: 15px 0 0 15px;
-transition:all 2s ease;
+transition:margin-right 2s;
 
 }
 
