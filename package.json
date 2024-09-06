@@ -29,6 +29,7 @@
     "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
+    "date-fns": "^3.6.0",
     "rimraf": "^6.0.1"
   }
 }
