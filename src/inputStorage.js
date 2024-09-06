@@ -2,48 +2,61 @@ const startDate = document.querySelector(".left_date");
 const endDate = document.querySelector(".right_date");
 const submit = document.querySelector(".weatherApp_submit");
 const textInput = document.querySelector(".weather_input");
-const toggle = document.querySelector('.toggle-label');
-const toggleInput = document.querySelector('.toggle-input')
-console.log(toggle);
 
+function getUserTextInput() {
+  return new Promise((resolve) => {
+    submit.addEventListener("click", (event) => {
+      let value = textInput.value;
+event.preventDefault()
+      resolve(value);
+    });
+  });
+}
 
+async function returnUserTextInput() {
+  const input = await getUserTextInput();
+  console.log(`userInput ${input}`);
+  return input;
+}
+returnUserTextInput();
 
-const inputVal = submit.addEventListener("click", (event) => {
-  let value = textInput.value;
-  localStorage.setItem("inputVal", value);
-  event.preventDefault();
-});
+function getUserStartDateInput() {
+  return new Promise((resolve) => {
+    submit.addEventListener("click", (event) => {
+      let startDateVal = startDate.value;
+event.preventDefault()
+      resolve(startDateVal);
+    });
+  });
+}
 
-const startDateStore = submit.addEventListener("click", (event) => {
-  let startDateVal = startDate.value;
-  
-  localStorage.setItem("startDate", startDateVal);
+async function returnUserStartDateInput() {
+  const startDateInput = await getUserStartDateInput();
+  console.log(`userStartDate ${startDateInput}`);
+  return startDateInput;
+}
+returnUserStartDateInput();
 
-  event.preventDefault();
-});
-const endDateStore = submit.addEventListener("click", (event) => {
-  let endDateVal = endDate.value;
+function getUserEndDateInput() {
+  return new Promise((resolve) => {
+    submit.addEventListener("click", (event) => {
+      let endDateVal = endDate.value;
+      event.preventDefault();
+      resolve(endDateVal);
 
-  localStorage.setItem("end", endDateVal);
-  event.preventDefault();
-});
+    });
+  });
+}
 
-const toggleValStore = submit.addEventListener('click',(event)=>{
-     event.preventDefault()
-     if (toggleInput.checked){
-          let toggleVal=toggleInput.nextElementSibling.getAttribute('data-on');
-          console.log(toggleVal);
-          localStorage.setItem('toggleval',toggleVal);
-          
-          
-     }else{
-          let toggleVal=toggleInput.nextElementSibling.getAttribute('data-off');
-          console.log(toggleVal);
-          localStorage.setItem('toggleval',toggleVal);
-             
-     }
-     
-})
+async function returnUserEndDateInput() {
+  const endDateInput = await getUserEndDateInput();
+  console.log(`userEndDate ${endDateInput}`);
+  return endDateInput;
+}
+returnUserEndDateInput();
 
-
-export { startDateStore, endDateStore, inputVal,toggleValStore };
+export {
+  returnUserTextInput,
+  returnUserStartDateInput,
+  returnUserEndDateInput,
+};
