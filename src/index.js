@@ -1,3 +1,4 @@
 import './style.css'
 import { checkValidation } from './Validation'
-import { startDateStore,endDateStore,inputVal,toggleValStore} from './inputStorage'
+import { returnUserTextInput,returnUserStartDateInput,returnUserEndDateInput,} from './inputStorage'
+// import{inputStr}from './weatherAPI'
