@@ -8,13 +8,10 @@ let condition = document.querySelector(".condition");
 
 submit.addEventListener("click", handleFormData);
 
-function handleFormData(event) {
-  event.preventDefault();
+function handleFormData() {
   localStorage.setItem("location", textInput.value);
   localStorage.setItem("date1", startDate.value);
   localStorage.setItem("date2", endDate.value);
-
-  
 }
 let input = localStorage.getItem("location").concat("/");
 let startDateInput = localStorage.getItem("date1").concat("/");
@@ -24,7 +21,7 @@ async function fetchApi(input, startDateInput, endDateInput) {
   if (input && startDateInput && endDateInput != ''){
     try {
       const response = await fetch(
-        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${input}${startDateInput}${endDateInput}?key=NTV85PXGEFFBCHC42DLFKNLY6`,
+        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${input}${startDateInput}${endDateInput}?key=RBUWJLANDE3NGCVRGEK8PCWNE`,
         { mode: "cors" }
       )
       console.log(`response-->${response}`);
@@ -45,31 +42,34 @@ fetchApi(input, startDateInput, endDateInput);
   console.log(data);
   return data ; 
 }
-getAwaitResponse()
 
-let tester = getAwaitResponse();
-// function test(){
-// //   tester.then((data)=>{
-// // console.log(data.days[0].conditions);
+async function destructureData() {
+  try {
+    const data = await getAwaitResponse();
+    console.log(data);
+    const dataDetails = {
+        cloudCover: data.days[0].cloudcover,
+        conditions: data.days[0].conditions,
+        dew: data.days[0].dew,
+        feelslike: data.days[0].feelslike,
+        humidity: data.days[0].humidity,
+        weatherIcon: data.days[0].icon,
+        sunrise: data.days[0].sunrise,
+        sunset: data.days[0].sunset,
+        maxTemp: data.days[0].tempmax,
+        minTemp: data.days[0].tempmin,
+      };
+     
+console.log(dataDetails);
+return dataDetails;
+  } catch (error) {
+    console.error("Error in testingData:", error);
+  }
+}
 
-// //   })
-  
-// }
-// test();
+destructureData();
 
-  // const dataDetails = {
-  //   cloudCover: data.days[0].cloudcover,
-  //   conditions: data.days[0].conditions,
-  //   dew: data.days[0].dew,
-  //   feelslike: data.days[0].feelslike,
-  //   humidity: data.days[0].humidity,
-  //   weatherIcon: data.days[0].icon,
-  //   sunrise: data.days[0].sunrise,
-  //   sunset: data.days[0].sunset,
-  //   maxTemp: data.days[0].tempmax,
-  //   minTemp: data.days[0].tempmin,
-  // };
- 
+  // 
 
 
 
@@ -100,4 +100,4 @@ function convertFahrenheitToCelsius(data) {
   return fahrenheitMax;
 }
 
-export { fetchApi, convertFahrenheitToCelsius,tester};
+export { fetchApi, convertFahrenheitToCelsius,getAwaitResponse,destructureData};
