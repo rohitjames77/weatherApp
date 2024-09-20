@@ -1,11 +1,5 @@
 const submit = document.querySelector(".weatherApp_submit");
-
 const inputText = document.querySelector(".weather_input");
-
-// let test= 'hello world';
-// let testTrim = test.replace(/\s+/g,'');
-// console.log(testTrim);
-
 const regex = new RegExp("^[a-zA-Z]+$", "g");
 const error = document.querySelector(".error_message");
 

@@ -6,16 +6,31 @@
     <title>Weather App</title>
   </head>
   <body>
-    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2E2MXhkY2E1aTN4d3VuazA0OHZjcXhlYTFjZGI0aDRpaG05d3p0ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fSXHTR5nSzKMOPVodt/giphy.gif" alt="" class="weather_backImage">
-    <p class="min-temp">mintemp</p>
-    <p class="max-temp">maxtemp</p>
-    <p class="sunrise">sunrise</p>
-    <p class="sunset">sunset</p>
-    <p class="humidity">humidity</p>
-    <p class="condition">condition</p>
-    <p class="feels-like" >feelslike</p>
-    <img src="" alt="" class="weather-icon">
     
+  <video src="./assets/hd.mp4" class="weather_backImage" loop="true" autoplay="true"></video>
+    
+  
+  
+  <div class="weather-info">
+      <h1 class="location"></h1>
+      <img src="" alt="" class="location-icon">
+      <img src="./assets/maximum-temp.png" alt="" class="min-temp-icon">
+      <p class="min-temp">MinTemp</p>
+      <img src="./assets/minimun-temp.png" alt="" class="max-temp-icon">
+      <p class="max-temp">MaxTemp</p>
+        <img class="sunrise-icon" src="./assets/sunrise.png" alt="sunrise-icon" />     
+        <p class="sunrise">Sunrise</p>
+      <img class="sunset-icon" src="./assets/sunset.png" alt="sunset-icon" />
+      <p class="sunset">Sunset</p>
+      <img src="./assets/humidty.png" alt="" class="humidity-icon">
+      <p class="humidity">Humidity</p>
+        <p class="condition">Condition</p>
+        <img src="" alt="" class="weather-icon">
+      </div>
+<div class="loader-container">
+     <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHV3N2Q2ZGNiNzhiNW4yaW9vdzdubXh6YndiNmVkYnRwcm1lZTNmNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUA7bjPYcgAvwq5CKc/giphy.gif" alt="" class="loader">
+    </div>
+
     <div class="weather_form_container">
       <h1 class="weatherApp_title">Weather</h1>
       <form method="GET" class="weatherApp_form">
@@ -27,120 +42,13 @@
           </span>
           <span class="toggle-handle"></span>
         </label>
-        <div class="date_container">
+        
           <input type="date" class="left_date" value="2024-09-01" required />
-          <input type="date" class="right_date" value="2024-09-01" required />
-        </div>
+        
         <button type="submit" class="weatherApp_submit">Search</button>
       </form>
     </div>
         </div>
-        <div class="carousel-wrapper">
-        <button class="left"> < </button>
-        <div class="carousel">
-           <div class="item slide-1">
-            <p class="min-temp">mintemp</p>
-            <p class="max-temp">maxtemp</p>
-            <p class="sunrise">sunrise</p>
-            <p class="sunset">sunset</p>
-            <p class="humidity">humidity</p>
-            <p class="condition">condition</p>
-            <p class="feels-like" >feelslike</p>
-            <img class="backdrop-gif" src="" alt="backdrop-gif">
-            <img class="sunrise-icon" src="" alt="sunrise-icon" />
-            <img class="sunset-icon" src="" alt="sunset-icon" />
-            <img class="humidity-icon" src="" alt="humidity-icon" />
-            <img class="condition-icon" src="" alt="condition-icon">
-           </div>
-           <div class="item slide-2">
-            <p class="min-temp">mintemp</p>
-            <p class="max-temp">maxtemp</p>
-            <p class="sunrise">sunrise</p>
-            <p class="sunset">sunset</p>
-            <p class="humidity">humidity</p>
-            <p class="condition">condition</p>
-            <p class="feels-like" >feelslike</p>
-            <img class="backdrop-gif" src="" alt="backdrop-gif">
-            <img class="sunrise-icon" src="" alt="sunrise-icon" />
-            <img class="sunset-icon" src="" alt="sunset-icon" />
-            <img class="humidity-icon" src="" alt="humidity-icon" />
-            <img class="condition-icon" src="" alt="condition-icon">
-           </div>
-           <div class="item">
-            <p class="min-temp">mintemp</p>
-            <p class="max-temp">maxtemp</p>
-            <p class="sunrise">sunrise</p>
-            <p class="sunset">sunset</p>
-            <p class="humidity">humidity</p>
-            <p class="condition">condition</p>
-            <p class="feels-like" >feelslike</p>
-            <img class="backdrop-gif" src="" alt="backdrop-gif">
-            <img class="sunrise-icon" src="" alt="sunrise-icon" />
-            <img class="sunset-icon" src="" alt="sunset-icon" />
-            <img class="humidity-icon" src="" alt="humidity-icon" />
-            <img class="condition-icon" src="" alt="condition-icon">
-           </div>
-           <div class="item">
-            <p class="min-temp">mintemp</p>
-            <p class="max-temp">maxtemp</p>
-            <p class="sunrise">sunrise</p>
-            <p class="sunset">sunset</p>
-            <p class="humidity">humidity</p>
-            <p class="condition">condition</p>
-            <p class="feels-like" >feelslike</p>
-            <img class="backdrop-gif" src="" alt="backdrop-gif">
-            <img class="sunrise-icon" src="" alt="sunrise-icon" />
-            <img class="sunset-icon" src="" alt="sunset-icon" />
-            <img class="humidity-icon" src="" alt="humidity-icon" />
-            <img class="condition-icon" src="" alt="condition-icon">
-           </div>
-           <div class="item">
-            <p class="min-temp">mintemp</p>
-            <p class="max-temp">maxtemp</p>
-            <p class="sunrise">sunrise</p>
-            <p class="sunset">sunset</p>
-            <p class="humidity">humidity</p>
-            <p class="condition">condition</p>
-            <p class="feels-like" >feelslike</p>
-            <img class="backdrop-gif" src="" alt="backdrop-gif">
-            <img class="sunrise-icon" src="" alt="sunrise-icon" />
-            <img class="sunset-icon" src="" alt="sunset-icon" />
-            <img class="humidity-icon" src="" alt="humidity-icon" />
-            <img class="condition-icon" src="" alt="condition-icon">
-           </div>
-           <div class="item">
-            <p class="min-temp">mintemp</p>
-            <p class="max-temp">maxtemp</p>
-            <p class="sunrise">sunrise</p>
-            <p class="sunset">sunset</p>
-            <p class="humidity">humidity</p>
-            <p class="condition">condition</p>
-            <p class="feels-like" >feelslike</p>
-            <img class="backdrop-gif" src="" alt="backdrop-gif">
-            <img class="sunrise-icon" src="" alt="sunrise-icon" />
-            <img class="sunset-icon" src="" alt="sunset-icon" />
-            <img class="humidity-icon" src="" alt="humidity-icon" />
-            <img class="condition-icon" src="" alt="condition-icon">
-           </div>
-           <div class="item">
-            <p class="min-temp">mintemp</p>
-            <p class="max-temp">maxtemp</p>
-            <p class="sunrise">sunrise</p>
-            <p class="sunset">sunset</p>
-            <p class="humidity">humidity</p>
-            <p class="condition">condition</p>
-            <p class="feels-like" >feelslike</p>
-            <img class="backdrop-gif" src="" alt="backdrop-gif">
-            <img class="sunrise-icon" src="" alt="sunrise-icon" />
-            <img class="sunset-icon" src="" alt="sunset-icon" />
-            <img class="humidity-icon" src="" alt="humidity-icon" />
-            <img class="condition-icon" src="" alt="condition-icon">
-           </div>
-           
-           
-        </div>
-        <button class="right"> > </button>
-     </div>
 
     </div>
   </body>
