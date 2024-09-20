@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: "./src/index.js",
@@ -14,17 +15,23 @@ module.exports = {
     static: {
       directory: path.resolve(__dirname, "dist"),
     },
-    port: 3100,
+    port: 8080,
     open: true,
     hot: true,
     compress: true,
     historyApiFallback: true,
   },
-  plugins: [new HtmlWebpackPlugin({
-    template: './src/index.html', // Path to your source HTML file
-    filename: 'index.html' // The filename of the generated HTML file in /dist
-  })],
-
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      filename: 'index.html'
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'src/assets', to: 'assets' }
+      ],
+    }),
+  ],
   module: {
     rules: [
       {
